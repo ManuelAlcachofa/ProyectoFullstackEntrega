@@ -1,0 +1,59 @@
+server:
+  port: 9090
+
+spring:
+  cloud:
+    gateway:
+      server:
+        webmvc:
+          routes:
+
+            - id: usuario-service
+              uri: http://usuario-service:9091
+              predicates:
+                - Path=/usuarios/**
+
+            - id: libro-service
+              uri: http://libro-service:9092
+              predicates:
+                - Path=/libros/**
+
+            - id: inventario-service
+              uri: http://inventario-service:9093
+              predicates:
+                - Path=/inventario/**
+
+            - id: categoria-service
+              uri: http://categoria-service:9094
+              predicates:
+                - Path=/categorias/**
+
+            - id: autor-service
+              uri: http://autor-service:9095
+              predicates:
+                - Path=/autores/**
+
+            - id: multa-service
+              uri: http://multa-service:9096
+              predicates:
+                - Path=/multas/**
+
+            - id: resena-service
+              uri: http://resena-service:9097
+              predicates:
+                - Path=/resenas/**
+
+            - id: prestamo-service
+              uri: http://prestamo-service:9098
+              predicates:
+                - Path=/prestamos/**
+
+            - id: reserva-service
+              uri: http://reserva-service:9099
+              predicates:
+                - Path=/reservas/**
+
+            - id: notificacion-service
+              uri: http://notificacion-service:9100
+              predicates:
+                - Path=/notificaciones/**

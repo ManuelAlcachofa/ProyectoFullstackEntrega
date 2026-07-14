@@ -1,0 +1,67 @@
+services:
+
+  api-gateway:
+    build: ./ApiGateway
+    ports:
+      - "9090:9090"
+    depends_on:
+      - usuario-service
+      - libro-service
+      - autor-service
+      - categoria-service
+      - inventario-service
+      - prestamo-service
+      - reserva-service
+      - multa-service
+      - notificacion-service
+      - resena-service
+
+  usuario-service:
+    build: ./UsuarioService
+    ports:
+      - "9091:9091"
+
+  libro-service:
+    build: ./LibroService
+    ports:
+      - "9092:9092"
+
+  inventario-service:
+    build: ./InventarioService
+    ports:
+      - "9093:9093"
+
+  categoria-service:
+    build: ./CategoriaService
+    ports:
+      - "9094:9094"
+
+  autor-service:
+    build: ./AutorService
+    ports:
+      - "9095:9095"
+
+  multa-service:
+    build: ./MultaService
+    ports:
+      - "9096:9096"
+
+  resena-service:
+    build: ./ResenaService
+    ports:
+      - "9097:9097"
+
+  prestamo-service:
+    build: ./PrestamoService
+    ports:
+      - "9098:9098"
+
+  reserva-service:
+    build: ./ReservaService
+    ports:
+      - "9099:9099"
+
+  notificacion-service:
+    build: ./NotificacionService
+    ports:
+      - "9100:9100"
